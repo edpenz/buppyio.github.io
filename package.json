@@ -1,0 +1,21 @@
+{
+  "name": "buppy-io",
+  "version": "0.0.0-alpha",
+  "description": "The buppy.io website",
+
+  "scripts": {
+    "build": "sh build.sh"
+  },
+
+  "devDependencies": {
+  },
+
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buppyio/buppyio.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buppyio/buppyio.github.io/issues"
+  }
+}
