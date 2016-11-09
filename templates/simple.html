@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>buppy file storage</title>
+
+    <script src="/js/jquery.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap-custom.css">
+    <script src="/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="/css/doc.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-overflow">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><b>buppy</b> file storage</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-navbar-overflow">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">About</a></li>
+            <li><a href="/man/1/bpy">Docs</a></li>
+          </ul>
+
+          <div class="nav navbar-nav visible-xs-block" id="bs-navbar-secondary">
+            <button type="button" class="btn btn-block" data-toggle="collapse" data-parent="#bs-navbar-secondary" data-target="#bs-navbar-secondary-commands">Commands</button>
+            <ul class="collapse in nav" id="bs-navbar-secondary-commands">
+              <li><a href="/man/1/bpy.html">bpy</a></li>
+              <li><a href="/man/1/bpy_browse.html">browse</a></li>
+              <li><a href="/man/1/bpy_cat.html">cat</a></li>
+              <li><a href="/man/1/bpy_cp.html">cp</a></li>
+              <li><a href="/man/1/bpy_env.html">env</a></li>
+              <li><a href="/man/1/bpy_gc.html">gc</a></li>
+              <li><a href="/man/1/bpy_get.html">get</a></li>
+              <li><a href="/man/1/bpy_hist.html">hist</a></li>
+              <li><a href="/man/1/bpy_ls.html">ls</a></li>
+              <li><a href="/man/1/bpy_mkdir.html">mkdir</a></li>
+              <li><a href="/man/1/bpy_mv.html">mv</a></li>
+              <li><a href="/man/1/bpy_put.html">put</a></li>
+              <li><a href="/man/1/bpy_rm.html">rm</a></li>
+              <li><a href="/man/1/bpy_tar.html">tar</a></li>
+              <li><a href="/man/1/bpy_zip.html">zip</a></li>
+            </ul>
+
+            <button type="button" class="btn btn-block" data-toggle="collapse" data-parent="#bs-navbar-secondary" data-target="#bs-navbar-secondary-internals">Internals</button>
+            <ul class="collapse nav" id="bs-navbar-secondary-internals">
+              <li><a href="/man/5/bpy_bpack.html">bpack</a></li>
+              <li><a href="/man/5/bpy_ebpack.html">ebpack</a></li>
+              <li><a href="/man/5/bpy_fs.html">fs</a></li>
+              <li><a href="/man/5/bpy_htree.html">htree</a></li>
+              <li><a href="/man/5/bpy_key.html">key</a></li>
+            </ul>
+
+            <button type="button" class="btn btn-block" data-toggle="collapse" data-parent="#bs-navbar-secondary" data-target="#bs-navbar-secondary-misc">Misc</button>
+            <ul class="collapse nav" id="bs-navbar-secondary-misc">
+              <li><a href="/man/7/bpy_environment.html">environment</a></li>
+              <li><a href="/man/7/bpy_drive.html">drive</a></li>
+              <li><a href="/man/7/bpy_timespec.html">timespec</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
+    <article class="container">
+      <h1>zip</h1>
+
+      <!-- Pandoc generated content -->
+      <h1 id="name">Name</h1>
+      <p>bpy zip - export a bpy folder to a zip archive</p>
+      <h1 id="synopsis">Synopsis</h1>
+      <p>The zip command creates a zip archive out of the specified folder.</p>
+      <h1 id="usage">Usage</h1>
+      <p><code>bpy zip [-at=TIMESPEC] src &gt; src.zip</code></p>
+      <h1 id="example">Example</h1>
+      <p>Fetch the entire root as a zip archive:</p>
+      <pre><code>$ bpy zip / &gt; out.zip</code></pre>
+      <h1 id="see-also">SEE ALSO</h1>
+      <p><strong><a href="/man/1/bpy.html">bpy(1)</a></strong></p>
+      <!-- End of generated content -->
+    </article>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-right">&copy; 2016 buppy.io</p>
+      </div>
+    </footer>
+  </body>
+</html>

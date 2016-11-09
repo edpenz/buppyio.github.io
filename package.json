@@ -8,6 +8,12 @@
   },
 
   "devDependencies": {
+    "jquery": "latest",
+    "bootstrap": "latest",
+    "mustache": "latest",
+    "less": "latest",
+    "autoprefixer": "latest",
+    "node-pandoc": "latest"
   },
 
   "license": "",
