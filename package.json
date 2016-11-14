@@ -4,6 +4,7 @@
   "description": "The buppy.io website",
 
   "scripts": {
+    "less": "lessc ./less/bootstrap-custom.less ./css/bootstrap-custom.css && lessc ./less/common.less ./css/common.css && lessc ./less/doc.less ./css/doc.css",
     "build": "sh build.sh"
   },
 
