@@ -12,9 +12,12 @@
     "jquery": "latest",
     "bootstrap": "latest",
     "mustache": "latest",
-    "less": "latest",
-    "autoprefixer": "latest",
-    "node-pandoc": "latest"
+    "gulp": "latest",
+    "gulp-pandoc": "latest",
+    "gulp-insert": "latest",
+    "gulp-less": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest"
   },
 
   "license": "",

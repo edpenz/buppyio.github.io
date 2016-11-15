@@ -1,0 +1,10 @@
+{{#categories}}
+<li>
+  <a class="sidebar-header" href=".bs-sidebar-{{code}}" data-toggle="collapse">{{title}}</a>
+  <ul class="nav collapse bs-sidebar-{{code}}">
+    {{#docs}}
+    <li><a href="{{{url}}}">{{title}}</a></li>
+    {{/docs}}
+  </ul>
+</li>
+{{/categories}}

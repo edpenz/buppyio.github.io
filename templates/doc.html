@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>buppy file storage</title>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap-custom.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/doc.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-overflow">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><b>buppy</b> file storage</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-navbar-overflow">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">About</a></li>
+            <li><a href="/man/1/bpy">Docs</a></li>
+            <li><a href="/">Download</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav nav-secondary">
+            {{>doc_links.html}}
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <nav class="sidebar sidebar-left col-sm-3 hidden-xs">
+          <ul class="nav nav-secondary">
+            {{>doc_links.html}}
+          </ul>
+        </nav>
+
+        <article class="col-sm-9">
+          <h1>{{doc.title}}</h1>
+          <hr />
+
+          <div class="pandoc-wrapper">
+            {{{contents}}}
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-right">&copy; 2016 buppy.io</p>
+      </div>
+    </footer>
+  </body>
+</html>
