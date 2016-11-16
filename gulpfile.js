@@ -2,6 +2,12 @@ var fs = require('fs');
 var path = require('path');
 var gulp = require('gulp');
 
+// Build environment checks.
+var assert = require('assert');
+
+assert.notEqual(process.env['GOPATH'], undefined, 'GOPATH must be set and contain github.com/buppyio/bpy');
+// TODO Check for pandoc, or switch to pure node converter.
+
 // HTML linkify, pandoc and mustache.
 var mustache = require('mustache');
 
@@ -23,17 +29,12 @@ var docCategories = (function () {
     var categoryPath = path.join(categoriesPath, category.code);
 
     for (docFilename of fs.readdirSync(categoryPath)) {
-      var docSource = path.join(categoryPath, docFilename);
-
-      var docName = docFilename.match('[^.]*')[0]; // Remove extension.
-      var docTitle = docName.replace("bpy_", "");  // Remove common prefix.
-
-      var docUrl = "/man/" + category.code + "/" + docName;
+      var extensionlessFilename = path.basename(docFilename, '.md');
 
       category.docs.push({
-        "title": docTitle,
-        "source": docSource,
-        "url": docUrl
+        title: extensionlessFilename.replace('bpy_', ''), // Remove common prefix.
+        source: path.join(categoryPath, docFilename),
+        url: '/man/' + category.code + '/' + extensionlessFilename
       });
     }
   }

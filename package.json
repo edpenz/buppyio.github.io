@@ -4,20 +4,19 @@
   "description": "The buppy.io website",
 
   "scripts": {
-    "less": "lessc ./less/bootstrap-custom.less ./css/bootstrap-custom.css && lessc ./less/common.less ./css/common.css && lessc ./less/doc.less ./css/doc.css",
-    "build": "sh build.sh"
+    "build": "gulp"
   },
 
   "devDependencies": {
-    "jquery": "latest",
-    "bootstrap": "latest",
-    "mustache": "latest",
-    "gulp": "latest",
-    "gulp-pandoc": "latest",
-    "gulp-insert": "latest",
-    "gulp-less": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-clean-css": "latest"
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "mustache": "^2.3.0",
+    "gulp": "^3.9.1",
+    "gulp-pandoc": "^0.2.2",
+    "gulp-insert": "^0.5.0",
+    "gulp-less": "^3.3.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.13"
   },
 
   "license": "",
