@@ -30,10 +30,9 @@
 
         <div class="collapse navbar-collapse" id="bs-navbar-overflow">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">About</a></li>
-            <li><a href="/man/1/bpy">Docs</a></li>
-            <li><a href="/">Download</a></li>
-          </ul>
+<li><a href="/">About</a></li>
+<li><a href="/man/1/bpy">Docs</a></li>
+<li><a href="//github.com/buppyio/bpy/releases">Download</a></li>          </ul>
 
           <ul class="nav navbar-nav nav-secondary">
 <li>
@@ -138,7 +137,7 @@
 <ul>
 <li>Large amounts of data can be stored in chunks that are small enough to not violate the size limits of <a href="/man/5/bpy_bpack.html">bpy_bpack(5)</a> files.</li>
 <li>Provide relatively efficient random access to the data stream while walking chunk contents, this allows 'seeking' when data streams are being accessed.</li>
-<li>Given two trees with identicle sub trees, all data can be cheaply deduplicated on disk by checking if the sub tree address is present in any bpy_(e)<a href="/man/5/bpack.html">bpack(5)</a> file.</li>
+<li>Given two trees with identicle sub trees, all data can be cheaply deduplicated on disk by checking if the sub tree address is present in any <a href="/man/5/bpy_ebpack.html">bpy_ebpack(5)</a> file.</li>
 <li>Provides compression for runs of values in data.</li>
 </ul>
 <p>The following diagram shows what a 3 node htree will look like stored on disk in a bpack file:</p>
