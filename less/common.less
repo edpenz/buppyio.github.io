@@ -9,8 +9,8 @@ body {
   // Reserved for navbar height.
   padding-top: 70px;
 
-  // Reserved for footer.
-  margin-bottom: 60px;
+  // Clearance between content and bottom of footer.
+  margin-bottom: 120px;
 }
 
 html {
@@ -24,6 +24,15 @@ pre {
 
 .navbar-brand b {
   color: @brand-primary;
+}
+
+.navbar, .navbar-fixed-top .navbar-collapse {
+  box-shadow: none;
+  border: none;
+}
+
+.navbar-fixed-top .navbar-collapse {
+  max-height: ~"calc(100vh - 50px)";
 }
 
 .footer {
