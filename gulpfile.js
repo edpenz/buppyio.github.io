@@ -42,7 +42,7 @@ var docCategories = (function () {
   return categories;
 })();
 
-var templateContents = (function() {
+function loadTemplates() {
   var partials = {};
 
   for (filename of fs.readdirSync(partialsPath)) {
@@ -51,7 +51,7 @@ var templateContents = (function() {
   }
 
   return partials;
-})();
+}
 
 function generateLinks(contents) {
   return contents.replace(/([a-z_]+)\(([0-9])\)/g, '[$1($2)](/man/$2/$1.html)');
@@ -74,7 +74,7 @@ function renderDocFromTemplate(contents, file) {
     contents: contents
   };
 
-  return mustache.render('{{>doc.html}}', templateParams, templateContents);
+  return mustache.render('{{>doc.html}}', templateParams, loadTemplates());
 }
 
 gulp.task('docs', function() {
