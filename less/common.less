@@ -5,45 +5,33 @@
   color: #ffffff;
 }
 
-body {
-  // Reserved for navbar height.
-  padding-top: 70px;
 
-  // Clearance between content and bottom of footer.
-  margin-bottom: 120px;
-}
-
+// Enable sticking to the bottom of body.
 html {
   position: relative;
   min-height: 100%;
 }
 
-pre {
-  border: 0;
+
+// Footer reserves space and sticks to bottom of body.
+@footer-height: 60px;
+
+.footer-reservation {
+  height: @footer-height * 1.5;
+
+  @media (min-width: @screen-sm-min) {
+    height: @footer-height * 3;
+  }
 }
 
-.navbar-brand b {
-  color: @brand-primary;
-}
-
-.navbar, .navbar-fixed-top .navbar-collapse {
-  box-shadow: none;
-  border: none;
-}
-
-.navbar-fixed-top .navbar-collapse {
-  max-height: ~"calc(100vh - 50px)";
-}
-
-.footer {
+footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
+  left: 0;
+  right: 0;
 
-  .container {
-    margin-top: 20px;
-  }
+  height: @footer-height;
+  padding-top: @footer-height / 3;
+
+  background-color: @gray-lighter;
 }
