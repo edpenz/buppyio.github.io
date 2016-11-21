@@ -1,28 +1,31 @@
 @import (reference) 'bootstrap-custom.less';
 
+// Hero logo and example banner.
 .banner {
-  background-color: @brand-secondary;
+  // Sit under navbar but with clearance.
   margin-top: 0px;
-  padding-top: 50px;
-}
+  padding-top: @navbar-height;
 
-@media (min-width: @screen-sm-min) {
-  .banner {
+  background-color: @brand-secondary;
+
+  // Add some padding when banner elements are floating. 
+  @media (min-width: @screen-sm-min) {
     padding-bottom: 50px;
   }
 }
 
-
+// Centre-align individual banner blocks.
 .banner > * {
   width: 450px;
   margin-left: auto;
   margin-right: auto;
 }
 
+// TODO Shared logo styling should be moved to specific class.
 .banner-brand {
   font-size: 53px;
-  text-align: center;
   line-height: 100px;
+  text-align: center;
 
   color: white;
   text-shadow: 0 5px 15px rgba(0,0,0,.33);
@@ -67,6 +70,7 @@
   }
 }
 
+// Make example console full-bleed when small.
 @media (max-width: @screen-xs-max) {
   .banner-example {
     width: auto;
