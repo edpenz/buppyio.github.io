@@ -8,10 +8,10 @@ var assert = require('assert');
 assert.notEqual(process.env['GOPATH'], undefined, 'GOPATH must be set and contain github.com/buppyio/bpy');
 // TODO Check for pandoc, or switch to pure node converter.
 
-// HTML linkify, pandoc and mustache.
+// HTML linkify, markdown and mustache.
 var mustache = require('mustache');
 
-var pandoc = require('gulp-pandoc');
+var markdown = require('gulp-markdown');
 var insert = require('gulp-insert');
 
 var categoriesPath = path.join(process.env['GOPATH'], './src/github.com/buppyio/bpy/doc/man/');
@@ -53,10 +53,6 @@ function loadTemplates() {
   return partials;
 }
 
-function generateLinks(contents) {
-  return contents.replace(/([a-z_]+)\(([0-9])\)/g, '[$1($2)](/man/$2/$1.html)');
-}
-
 function differOnlyByExtension(a, b) {
   return !path.relative(a.slice(0, a.lastIndexOf('.')), b.slice(0, b.lastIndexOf('.')));
 }
@@ -77,12 +73,24 @@ function renderDocFromTemplate(contents, file) {
   return mustache.render('{{>doc.html}}', templateParams, loadTemplates());
 }
 
+function preprocessMarkdown() {
+  return insert.transform((content) => {
+    return content
+      // Remove custom comments.
+      .replace(/^%.*$/gm, '') 
+      // Reduce headings 1 size.
+      .replace(/^#/gm, '##')  
+      // Generate bpy_XXX(X) cross-links.
+      .replace(/([a-z_]+)\(([0-9])\)/g, '[$1($2)](/man/$2/$1.html)');
+  });
+}
+
 gulp.task('docs', function() {
   return docCategories.map((category) => {
     return gulp
       .src(path.join(categoriesPath, category.code, '*.md'))
-      .pipe(insert.transform(generateLinks))
-      .pipe(pandoc({from: 'markdown', to: 'html5', ext: '.html'}))
+      .pipe(preprocessMarkdown())
+      .pipe(markdown())
       .pipe(insert.transform(renderDocFromTemplate))
       .pipe(gulp.dest(path.join('./man/', category.code)));
   });
@@ -117,7 +125,7 @@ gulp.task('libs', function() {
 // Helpers.
 gulp.task('default', ['docs', 'css', 'libs']);
 
-gulp.task('watch', function(){
+gulp.task('watch', ['default'], function(){
   gulp.watch(path.join(categoriesPath, '**/*.md'), ['docs']);
   gulp.watch(path.join(partialsPath, '**/*'), ['docs']);
 
