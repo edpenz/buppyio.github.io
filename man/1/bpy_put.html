@@ -126,44 +126,47 @@
 
         <article class="col-sm-9">
           <h1>put</h1>
-          <hr />
-
-          <div class="pandoc-wrapper">
-            <h1 id="name">Name</h1>
+          <h2 id="name">Name</h2>
 <p>bpy put - put a local folder into the bpy drive.</p>
-<h1 id="synopsis">Synopsis</h1>
+<h2 id="synopsis">Synopsis</h2>
 <p>The put command lets you upload a local file or folder into the bpy root or a subfolder.</p>
-<h1 id="usage">Usage</h1>
+<h2 id="usage">Usage</h2>
 <p><code>bpy put src [dest]</code></p>
-<h1 id="example">Example</h1>
+<h2 id="example">Example</h2>
 <p>Put the current working directory into the root of the bpy drive:</p>
 <pre><code>$ pwd
 /home/ac/stuff
 $ bpy put .
 $ bpy ls
-stuff/</code></pre>
-<p>Put a single file into the stuff folder:</p>
+stuff/
+</code></pre><p>Put a single file into the stuff folder:</p>
 <pre><code>$ bpy put /home/ac/somefile.txt stuff/
 $ bpy ls
 stuff/
 $ bpy ls stuff
-somefile.txt</code></pre>
-<p>Put a single file into the root directory with a different name:</p>
+somefile.txt
+</code></pre><p>Put a single file into the root directory with a different name:</p>
 <pre><code>$ bpy put /home/ac/somefile.txt foo.txt
 $ bpy ls
-foo.txt</code></pre>
-<h1 id="see-also">SEE ALSO</h1>
+foo.txt
+</code></pre><h2 id="see-also">SEE ALSO</h2>
 <p><strong><a href="/man/1/bpy.html">bpy(1)</a></strong></p>
 
-          </div>
         </article>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted text-right">&copy; 2016 buppy.io</p>
-      </div>
-    </footer>
+    <div class="footer-reservation">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <p class="text-muted text-right">&copy; 2016 buppy.io</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
   </body>
 </html>

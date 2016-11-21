@@ -126,18 +126,22 @@
 
         <article class="col-sm-9">
           <h1>htree</h1>
-          <hr />
-
-          <div class="pandoc-wrapper">
-            <h1 id="name">Name</h1>
+          <h2 id="name">Name</h2>
 <p>htree - Hash tree format for storing streams of data.</p>
-<h1 id="synopsis">Synopsis</h1>
-<p>bpy stores all data internally as a hash tree data structure. Each node in tree is given an address which reflects a bpack key used to locate the node data. The node address is calculated as <code>SHA256(DEFLATE(NODEDATA))</code>, where the node data stored at the address is either a flate compressed list of stream offsets and child node addresses, or for leaf nodes, the flate compressed stream data itself.</p>
+<h2 id="synopsis">Synopsis</h2>
+<p>bpy stores all data internally as a hash tree data structure. Each node in tree is given an address which
+reflects a bpack key used to locate the node data.
+The node address is calculated as <code>SHA256(DEFLATE(NODEDATA))</code>, where the node data stored at the address is either a
+flate compressed list of stream offsets and child node addresses, or for leaf nodes, the flate compressed
+stream data itself. </p>
 <p>The htree data structure is important to bpy as it enables the following properties:</p>
 <ul>
-<li>Large amounts of data can be stored in chunks that are small enough to not violate the size limits of <a href="/man/5/bpy_bpack.html">bpy_bpack(5)</a> files.</li>
-<li>Provide relatively efficient random access to the data stream while walking chunk contents, this allows 'seeking' when data streams are being accessed.</li>
-<li>Given two trees with identicle sub trees, all data can be cheaply deduplicated on disk by checking if the sub tree address is present in any <a href="/man/5/bpy_ebpack.html">bpy_ebpack(5)</a> file.</li>
+<li>Large amounts of data can be stored in chunks that are small enough to not violate the size
+limits of <a href="/man/5/bpy_bpack.html">bpy_bpack(5)</a> files.</li>
+<li>Provide relatively efficient random access to the data stream while walking chunk contents,
+this allows &#39;seeking&#39; when data streams are being accessed.</li>
+<li>Given two trees with identicle sub trees, all data can be cheaply deduplicated on disk by checking
+if the sub tree address is present in any bpy_(e)<a href="/man/5/bpack.html">bpack(5)</a> file.</li>
 <li>Provides compression for runs of values in data.</li>
 </ul>
 <p>The following diagram shows what a 3 node htree will look like stored on disk in a bpack file:</p>
@@ -167,19 +171,25 @@ Chunk2, address = SHA256(Deflate(Chunk2))
 | | depth2[1]    | | depth2 = 0
 | | data2[N2]    | |
 | +--------------+ |
-+------------------+</code></pre>
-<h1 id="see-also">SEE ALSO</h1>
++------------------+
+</code></pre><h2 id="see-also">SEE ALSO</h2>
 <p><strong><a href="/man/5/bpy_bpack.html">bpy_bpack(5)</a></strong>, <strong><a href="/man/7/bpy_fs.html">bpy_fs(7)</a></strong></p>
 
-          </div>
         </article>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted text-right">&copy; 2016 buppy.io</p>
-      </div>
-    </footer>
+    <div class="footer-reservation">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <p class="text-muted text-right">&copy; 2016 buppy.io</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
   </body>
 </html>

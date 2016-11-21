@@ -126,14 +126,16 @@
 
         <article class="col-sm-9">
           <h1>fs</h1>
-          <hr />
-
-          <div class="pandoc-wrapper">
-            <h1 id="name">Name</h1>
+          <h2 id="name">Name</h2>
 <p>fs - The bpy file system</p>
-<h1 id="synopsis">Synopsis</h1>
-<p>Bpy stores files in a virtual file system built on top of a collection of <a href="/man/5/bpy_ebpack.html">bpy_ebpack(5)</a> files. Every directory in the file system itself is comprised of <a href="/man/5/bpy_htree.html">bpy_htree(5)</a> data structure, which has a data stream describing the directory contents.</p>
-<p>The directory stream data contains a list of directory entries, with the first entry containing a special entry with name '.' that refers to the current directory. The 'Data' field for the '.' entry is an unspecified value because hash trees cannot contain circular references.</p>
+<h2 id="synopsis">Synopsis</h2>
+<p>Bpy stores files in a virtual file system built on top of a collection of <a href="/man/5/bpy_ebpack.html">bpy_ebpack(5)</a> files.
+Every directory in the file system itself is comprised of <a href="/man/5/bpy_htree.html">bpy_htree(5)</a> data structure, which
+has a data stream describing the directory contents.</p>
+<p>The directory stream data contains a list of directory entries, with the first entry
+containing a special entry with name &#39;.&#39; that refers to the current directory. The
+&#39;Data&#39; field for the &#39;.&#39; entry is an unspecified value because hash trees cannot contain
+circular references.</p>
 <p>The directory entries are serialized as the following structure:</p>
 <pre><code>+---------------+
 | NameLen[2]    | Little endian length of directory entry.
@@ -149,20 +151,26 @@
 | DataDepth[1]  | The height of contents htree.
 +---------------+
 | Data[32]      | The htree hash containing the file/directory contents.
-+---------------+</code></pre>
-<p>The mode flags are described in more detail at <a href="https://golang.org/pkg/os/#FileMode" class="uri">https://golang.org/pkg/os/#FileMode</a>.</p>
-<h1 id="see-also">SEE ALSO</h1>
++---------------+
+</code></pre><p>The mode flags are described in more detail at <a href="https://golang.org/pkg/os/#FileMode">https://golang.org/pkg/os/#FileMode</a>.</p>
+<h2 id="see-also">SEE ALSO</h2>
 <p><strong><a href="/man/1/bpy.html">bpy(1)</a></strong>, <strong><a href="/man/5/bpy_ebpack.html">bpy_ebpack(5)</a></strong>, <strong><a href="/man/5/bpy_htree.html">bpy_htree(5)</a></strong></p>
 
-          </div>
         </article>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted text-right">&copy; 2016 buppy.io</p>
-      </div>
-    </footer>
+    <div class="footer-reservation">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <p class="text-muted text-right">&copy; 2016 buppy.io</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
   </body>
 </html>

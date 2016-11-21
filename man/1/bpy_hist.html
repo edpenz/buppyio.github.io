@@ -126,34 +126,41 @@
 
         <article class="col-sm-9">
           <h1>hist</h1>
-          <hr />
-
-          <div class="pandoc-wrapper">
-            <h1 id="name">Name</h1>
+          <h2 id="name">Name</h2>
 <p>bpy hist - list or prune a drive history</p>
-<h1 id="synopsis">Synopsis</h1>
-<p>Whenever you make a change to your bpy files, data not removed. Bpy maintains a full history of changes in case you ever need to revert a mistake such as accidental deletion of a file. The bpy hist command allows you to list this history, and even prune it. Pruning your history in conjunction with running <a href="/man/1/bpy_gc.html">bpy_gc(1)</a> is the only way to purge data from the pack file storage.</p>
-<h1 id="usage">Usage</h1>
-<p><code>$ bpy hist list</code> <code>$ bpy hist prune [-all] [-older-than=TIMESPEC]</code></p>
-<h1 id="example">Example</h1>
+<h2 id="synopsis">Synopsis</h2>
+<p>Whenever you make a change to your bpy files, data not removed. Bpy maintains a full history
+of changes in case you ever need to revert a mistake such as accidental deletion of a file.
+The bpy hist command allows you to list this history, and even prune it. Pruning your history 
+in conjunction with running <a href="/man/1/bpy_gc.html">bpy_gc(1)</a> is the only way to purge data from the pack file storage.</p>
+<h2 id="usage">Usage</h2>
+<p><code>$ bpy hist list</code>
+<code>$ bpy hist prune [-all] [-older-than=TIMESPEC]</code></p>
+<h2 id="example">Example</h2>
 <p>View your history:</p>
-<pre><code>$ bpy hist list</code></pre>
-<p>Clear all history:</p>
-<pre><code>$ bpy hist prune -all</code></pre>
-<p>Clear history older than midday on the first of February 2016:</p>
-<pre><code>$ bpy hist prune -older-than=&quot;12:00:00 1/2/2016&quot;</code></pre>
-<h1 id="see-also">SEE ALSO</h1>
+<pre><code>$ bpy hist list
+</code></pre><p>Clear all history:</p>
+<pre><code>$ bpy hist prune -all
+</code></pre><p>Clear history older than midday on the first of February 2016:</p>
+<pre><code>$ bpy hist prune -older-than=&quot;12:00:00 1/2/2016&quot;
+</code></pre><h2 id="see-also">SEE ALSO</h2>
 <p><strong><a href="/man/1/bpy.html">bpy(1)</a></strong>, <strong><a href="/man/1/bpy_gc.html">bpy_gc(1)</a></strong>, <strong><a href="/man/7/bpy_timespec.html">bpy_timespec(7)</a></strong></p>
 
-          </div>
         </article>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted text-right">&copy; 2016 buppy.io</p>
-      </div>
-    </footer>
+    <div class="footer-reservation">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <p class="text-muted text-right">&copy; 2016 buppy.io</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
   </body>
 </html>

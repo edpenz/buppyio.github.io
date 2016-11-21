@@ -126,15 +126,16 @@
 
         <article class="col-sm-9">
           <h1>bpack</h1>
-          <hr />
-
-          <div class="pandoc-wrapper">
-            <h1 id="name">Name</h1>
+          <h2 id="name">Name</h2>
 <p>bpack - bpack is the file format used by bpy as an on disk mapping of keys to values.</p>
-<h1 id="synopsis">Synopsis</h1>
-<p>Bpy stores file data on disk as a collection of bpack files. Bpack files are a simple format that stores a list of values concatenated, with an index sorted by key, that can be read quickly without scanning the values inside the pack.</p>
-<p>The format is designed so that bpy can write the pack files in a single data stream without back tracking.</p>
-<p>In typical usage, the keys used by bpy are all sha256 hashes, using the pack files as a content addressed storage system.</p>
+<h2 id="synopsis">Synopsis</h2>
+<p>Bpy stores file data on disk as a collection of bpack files. Bpack files
+are a simple format that stores a list of values concatenated, with an index
+sorted by key, that can be read quickly without scanning the values inside the pack.</p>
+<p>The format is designed so that bpy can write the pack files in a single
+data stream without back tracking.</p>
+<p>In typical usage, the keys used by bpy are all sha256 hashes, using the 
+pack files as a content addressed storage system.</p>
 <p>The following is an example diagram showing the layout of 3 values and the index as stored on disk:</p>
 <pre><code>+-------------+ &lt;- off1
 | val[N1]     |
@@ -159,19 +160,25 @@
 | N3[3]       |
 +-------------+
 | idxstart[8] |
-+-------------+</code></pre>
-<h1 id="see-also">SEE ALSO</h1>
++-------------+
+</code></pre><h2 id="see-also">SEE ALSO</h2>
 <p><strong><a href="/man/1/bpy.html">bpy(1)</a></strong></p>
 
-          </div>
         </article>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted text-right">&copy; 2016 buppy.io</p>
-      </div>
-    </footer>
+    <div class="footer-reservation">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <p class="text-muted text-right">&copy; 2016 buppy.io</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
   </body>
 </html>

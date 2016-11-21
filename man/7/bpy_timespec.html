@@ -126,27 +126,32 @@
 
         <article class="col-sm-9">
           <h1>timespec</h1>
-          <hr />
-
-          <div class="pandoc-wrapper">
-            <h1 id="name">Name</h1>
+          <h2 id="name">Name</h2>
 <p>bpy time spec</p>
-<h1 id="synopsis">Synopsis</h1>
+<h2 id="synopsis">Synopsis</h2>
 <p>This page describes the time spec format used by the majority of <a href="/man/1/bpy.html">bpy(1)</a> commands.</p>
-<p>A time spec can take one of two formats, an exact date, or a relative time spec. Exact dates are specified in the format &quot;hh:mm:ss dd/MM/YYYY&quot; while relative times are specified as &quot;NN(s|m|h) ago&quot;.</p>
-<h1 id="example">Example</h1>
+<p>A time spec can take one of two formats, an exact date, or a relative time spec.
+Exact dates are specified in the format &quot;hh:mm:ss dd/MM/YYYY&quot; while relative times
+are specified as &quot;NN(s|m|h) ago&quot;. </p>
+<h2 id="example">Example</h2>
 <pre><code>bpy ls -when=&quot;5m ago&quot; # 5 minutes ago
-bpy ls -when=&quot;12:00:00 1/2/2016&quot;  # midday on the first of February 2016</code></pre>
-
-          </div>
+bpy ls -when=&quot;12:00:00 1/2/2016&quot;  # midday on the first of February 2016
+</code></pre>
         </article>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted text-right">&copy; 2016 buppy.io</p>
-      </div>
-    </footer>
+    <div class="footer-reservation">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <p class="text-muted text-right">&copy; 2016 buppy.io</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
   </body>
 </html>
