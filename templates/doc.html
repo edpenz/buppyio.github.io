@@ -62,21 +62,13 @@
 
     <script>
       // Expand tree nav to reveal current page. TODO Make server-side.
-      (function () {
+      $(function () {
         var currentPageUrl = window.location.pathname;
-        var currentPageLinks = document.querySelectorAll('a[href="' + currentPageUrl + '"]');
+        var currentPageLinks = $('a[href="' + currentPageUrl + '"]');
 
-        for (var link of currentPageLinks) {
-          // Expand every collapsed parent.
-          var parent = link.parentElement;
-          while (parent != null) {
-            if (parent.classList.contains("collapse-auto")) {
-              parent.classList.add("in");
-            }
-            parent = parent.parentElement;
-          }
-        }
-      })();
+        var collapsedParents = currentPageLinks.parents('.collapse-auto');
+        collapsedParents.addClass('in');
+      });
     </script>
 
   </body>
