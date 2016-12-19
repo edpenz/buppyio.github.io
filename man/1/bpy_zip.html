@@ -37,7 +37,7 @@
           <ul class="nav navbar-nav nav-secondary">
 <li>
   <a class="sidebar-header" href=".bs-sidebar-1" data-toggle="collapse">Commands</a>
-  <ul class="nav collapse bs-sidebar-1">
+  <ul class="nav collapse collapse-auto bs-sidebar-1">
     <li><a href="/man/1/bpy">bpy</a></li>
     <li><a href="/man/1/bpy_browse">browse</a></li>
     <li><a href="/man/1/bpy_cat">cat</a></li>
@@ -57,7 +57,7 @@
 </li>
 <li>
   <a class="sidebar-header" href=".bs-sidebar-5" data-toggle="collapse">Internals</a>
-  <ul class="nav collapse bs-sidebar-5">
+  <ul class="nav collapse collapse-auto bs-sidebar-5">
     <li><a href="/man/5/bpy_bpack">bpack</a></li>
     <li><a href="/man/5/bpy_ebpack">ebpack</a></li>
     <li><a href="/man/5/bpy_fs">fs</a></li>
@@ -67,7 +67,7 @@
 </li>
 <li>
   <a class="sidebar-header" href=".bs-sidebar-7" data-toggle="collapse">Misc</a>
-  <ul class="nav collapse bs-sidebar-7">
+  <ul class="nav collapse collapse-auto bs-sidebar-7">
     <li><a href="/man/7/bpy_drive">drive</a></li>
     <li><a href="/man/7/bpy_environment">environment</a></li>
     <li><a href="/man/7/bpy_timespec">timespec</a></li>
@@ -85,7 +85,7 @@
           <ul class="nav nav-secondary">
 <li>
   <a class="sidebar-header" href=".bs-sidebar-1" data-toggle="collapse">Commands</a>
-  <ul class="nav collapse bs-sidebar-1">
+  <ul class="nav collapse collapse-auto bs-sidebar-1">
     <li><a href="/man/1/bpy">bpy</a></li>
     <li><a href="/man/1/bpy_browse">browse</a></li>
     <li><a href="/man/1/bpy_cat">cat</a></li>
@@ -105,7 +105,7 @@
 </li>
 <li>
   <a class="sidebar-header" href=".bs-sidebar-5" data-toggle="collapse">Internals</a>
-  <ul class="nav collapse bs-sidebar-5">
+  <ul class="nav collapse collapse-auto bs-sidebar-5">
     <li><a href="/man/5/bpy_bpack">bpack</a></li>
     <li><a href="/man/5/bpy_ebpack">ebpack</a></li>
     <li><a href="/man/5/bpy_fs">fs</a></li>
@@ -115,7 +115,7 @@
 </li>
 <li>
   <a class="sidebar-header" href=".bs-sidebar-7" data-toggle="collapse">Misc</a>
-  <ul class="nav collapse bs-sidebar-7">
+  <ul class="nav collapse collapse-auto bs-sidebar-7">
     <li><a href="/man/7/bpy_drive">drive</a></li>
     <li><a href="/man/7/bpy_environment">environment</a></li>
     <li><a href="/man/7/bpy_timespec">timespec</a></li>
@@ -136,7 +136,7 @@
 <p>Fetch the entire root as a zip archive:</p>
 <pre><code>$ bpy zip / &gt; out.zip
 </code></pre><h2 id="see-also">SEE ALSO</h2>
-<p><strong><a href="/man/1/bpy.html">bpy(1)</a></strong></p>
+<p><strong><a href="/man/1/bpy">bpy(1)</a></strong></p>
 
         </article>
       </div>
@@ -153,6 +153,17 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      // Expand tree nav to reveal current page. TODO Make server-side.
+      $(function () {
+        var currentPageUrl = window.location.pathname;
+        var currentPageLinks = $('a[href="' + currentPageUrl + '"]');
+
+        var collapsedParents = currentPageLinks.parents('.collapse-auto');
+        collapsedParents.addClass('in');
+      });
+    </script>
 
   </body>
 </html>

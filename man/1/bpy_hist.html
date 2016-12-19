@@ -37,7 +37,7 @@
           <ul class="nav navbar-nav nav-secondary">
 <li>
   <a class="sidebar-header" href=".bs-sidebar-1" data-toggle="collapse">Commands</a>
-  <ul class="nav collapse bs-sidebar-1">
+  <ul class="nav collapse collapse-auto bs-sidebar-1">
     <li><a href="/man/1/bpy">bpy</a></li>
     <li><a href="/man/1/bpy_browse">browse</a></li>
     <li><a href="/man/1/bpy_cat">cat</a></li>
@@ -57,7 +57,7 @@
 </li>
 <li>
   <a class="sidebar-header" href=".bs-sidebar-5" data-toggle="collapse">Internals</a>
-  <ul class="nav collapse bs-sidebar-5">
+  <ul class="nav collapse collapse-auto bs-sidebar-5">
     <li><a href="/man/5/bpy_bpack">bpack</a></li>
     <li><a href="/man/5/bpy_ebpack">ebpack</a></li>
     <li><a href="/man/5/bpy_fs">fs</a></li>
@@ -67,7 +67,7 @@
 </li>
 <li>
   <a class="sidebar-header" href=".bs-sidebar-7" data-toggle="collapse">Misc</a>
-  <ul class="nav collapse bs-sidebar-7">
+  <ul class="nav collapse collapse-auto bs-sidebar-7">
     <li><a href="/man/7/bpy_drive">drive</a></li>
     <li><a href="/man/7/bpy_environment">environment</a></li>
     <li><a href="/man/7/bpy_timespec">timespec</a></li>
@@ -85,7 +85,7 @@
           <ul class="nav nav-secondary">
 <li>
   <a class="sidebar-header" href=".bs-sidebar-1" data-toggle="collapse">Commands</a>
-  <ul class="nav collapse bs-sidebar-1">
+  <ul class="nav collapse collapse-auto bs-sidebar-1">
     <li><a href="/man/1/bpy">bpy</a></li>
     <li><a href="/man/1/bpy_browse">browse</a></li>
     <li><a href="/man/1/bpy_cat">cat</a></li>
@@ -105,7 +105,7 @@
 </li>
 <li>
   <a class="sidebar-header" href=".bs-sidebar-5" data-toggle="collapse">Internals</a>
-  <ul class="nav collapse bs-sidebar-5">
+  <ul class="nav collapse collapse-auto bs-sidebar-5">
     <li><a href="/man/5/bpy_bpack">bpack</a></li>
     <li><a href="/man/5/bpy_ebpack">ebpack</a></li>
     <li><a href="/man/5/bpy_fs">fs</a></li>
@@ -115,7 +115,7 @@
 </li>
 <li>
   <a class="sidebar-header" href=".bs-sidebar-7" data-toggle="collapse">Misc</a>
-  <ul class="nav collapse bs-sidebar-7">
+  <ul class="nav collapse collapse-auto bs-sidebar-7">
     <li><a href="/man/7/bpy_drive">drive</a></li>
     <li><a href="/man/7/bpy_environment">environment</a></li>
     <li><a href="/man/7/bpy_timespec">timespec</a></li>
@@ -132,7 +132,7 @@
 <p>Whenever you make a change to your bpy files, data not removed. Bpy maintains a full history
 of changes in case you ever need to revert a mistake such as accidental deletion of a file.
 The bpy hist command allows you to list this history, and even prune it. Pruning your history 
-in conjunction with running <a href="/man/1/bpy_gc.html">bpy_gc(1)</a> is the only way to purge data from the pack file storage.</p>
+in conjunction with running <a href="/man/1/bpy_gc">bpy_gc(1)</a> is the only way to purge data from the pack file storage.</p>
 <h2 id="usage">Usage</h2>
 <p><code>$ bpy hist list</code>
 <code>$ bpy hist prune [-all] [-older-than=TIMESPEC]</code></p>
@@ -144,7 +144,7 @@ in conjunction with running <a href="/man/1/bpy_gc.html">bpy_gc(1)</a> is the on
 </code></pre><p>Clear history older than midday on the first of February 2016:</p>
 <pre><code>$ bpy hist prune -older-than=&quot;12:00:00 1/2/2016&quot;
 </code></pre><h2 id="see-also">SEE ALSO</h2>
-<p><strong><a href="/man/1/bpy.html">bpy(1)</a></strong>, <strong><a href="/man/1/bpy_gc.html">bpy_gc(1)</a></strong>, <strong><a href="/man/7/bpy_timespec.html">bpy_timespec(7)</a></strong></p>
+<p><strong><a href="/man/1/bpy">bpy(1)</a></strong>, <strong><a href="/man/1/bpy_gc">bpy_gc(1)</a></strong>, <strong><a href="/man/7/bpy_timespec">bpy_timespec(7)</a></strong></p>
 
         </article>
       </div>
@@ -161,6 +161,17 @@ in conjunction with running <a href="/man/1/bpy_gc.html">bpy_gc(1)</a> is the on
         </div>
       </footer>
     </div>
+
+    <script>
+      // Expand tree nav to reveal current page. TODO Make server-side.
+      $(function () {
+        var currentPageUrl = window.location.pathname;
+        var currentPageLinks = $('a[href="' + currentPageUrl + '"]');
+
+        var collapsedParents = currentPageLinks.parents('.collapse-auto');
+        collapsedParents.addClass('in');
+      });
+    </script>
 
   </body>
 </html>
