@@ -81,7 +81,7 @@ function preprocessMarkdown() {
       // Reduce headings 1 size.
       .replace(/^#/gm, '##')  
       // Generate bpy_XXX(X) cross-links.
-      .replace(/([a-z_]+)\(([0-9])\)/g, '[$1($2)](/man/$2/$1.html)');
+      .replace(/([a-z_]+)\(([0-9])\)/g, '[$1($2)](/man/$2/$1)');
   });
 }
 
